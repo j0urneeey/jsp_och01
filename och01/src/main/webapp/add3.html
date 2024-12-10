@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(!frm.num.value){
+			alert("숫자입력안하니?");
+			frm.num.focus();
+			return false;
+		}
+		// NaN : Not A Number 숫자가 아닐 때
+		if(isNaN(frm.num.value)){
+			alert("숫자를 모르니 ?? 헐!");
+			frm.num.focus();
+			frm.num.value=""; //입력된 글자 지우기
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h1>숫자를 입력하세요</h1>
+	<!--
+	name 속성은 주로 자바스크립트에서 사용할 때 사용 
+	method : get/post 차이점 
+			 이미지를 서버로 보낼 땐 꼭 post
+	request와 response 객체를 가지고 서버를 호출
+	-->
+	<form action="Add3" name="frm" method="post" onsubmit="return chk()">
+		숫자 : <input type="text" name="num"><p>
+		문자 : <input type="text" name="han"><p>
+			<input type="submit" value="확인">
+	</form>
+	
+	
+	
+</body>
+</html>
